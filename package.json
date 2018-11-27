@@ -11,21 +11,31 @@
   },
   "dependencies": {
     "@zeit/next-typescript": "^1.1.1",
+    "immutable": "^4.0.0-rc.12",
     "next": "latest",
+    "next-redux-wrapper": "^2.0.0",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react-dom": "^16.5.2",
+    "react-redux": "^5.1.1",
+    "redux": "^4.0.1",
+    "redux-immutable": "^4.0.0",
+    "redux-logger": "^3.0.6"
   },
   "devDependencies": {
     "@types/jest": "^23.3.9",
     "@types/next": "^7.0.1",
     "@types/react": "^16.4.16",
     "@types/react-dom": "16.0.8",
+    "@types/react-redux": "^5.0.21",
+    "@types/redux-immutable": "^4.0.0",
+    "@types/redux-logger": "^3.0.6",
     "babel-jest": "^23.6.0",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.7.0",
     "jest": "^23.6.0",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.6.3",
+    "redux-devtools-extension": "^2.13.6",
     "tslint": "^5.11.0",
     "tslint-react": "^3.6.0",
     "typescript": "3.1.1"

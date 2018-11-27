@@ -11,7 +11,7 @@ const Layout: React.SFC<IProps> = ({ children, title = 'This is the default titl
     <header>
       <nav>
         <Link href='/'><a>Home</a></Link> |{' '}
-        <Link href='/about'><a>About</a></Link>
+        <Link href='/count'><a>Count</a></Link>
       </nav>
     </header>
     <h1>{title}</h1>
