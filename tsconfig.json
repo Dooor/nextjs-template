@@ -1,18 +1,26 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "esnext",
-    "jsx": "preserve",
-    "lib": ["dom", "es2017"],
-    "moduleResolution": "node",
-    "allowJs": true,
-    "noEmit": true,
+    "module": "commonjs",
+    "allowJs": false,
     "allowSyntheticDefaultImports": true,
-    "skipLibCheck": true,
+    "baseUrl": ".",
+    "jsx": "preserve",
+    "lib": [
+      "es6",
+      "dom",
+      "es2016"
+    ],
+    "moduleResolution": "node",
+    "noEmit": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "removeComments": false,
+    "paths": {
+      "next-redux-wrapper": ["./types/next-redux-wrapper"]
+    },
     "preserveConstEnums": true,
+    "removeComments": false,
+    "skipLibCheck": true,
     "sourceMap": true
   }
 }

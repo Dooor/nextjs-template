@@ -1,7 +1,7 @@
 // Library
 import { fromJS } from 'immutable';
 import withRedux from 'next-redux-wrapper';
-import App, { AppProps, Container, DefaultAppIProps } from 'next/app';
+import App, { AppProps, Container, DefaultAppIProps, NextAppContext } from 'next/app';
 import * as React from 'react';
 import { Provider } from 'react-redux';
 
@@ -13,7 +13,12 @@ interface IProps {
 }
 
 class MyApp extends App<IProps & DefaultAppIProps & AppProps> {
-  public static async getInitialProps({ Component, ctx }) {
+  public static async getInitialProps(context: NextAppContext) {
+    const {
+      Component,
+      ctx,
+    } = context;
+
     return {
       pageProps: (Component.getInitialProps ? await Component.getInitialProps({ ...ctx}) : {}),
     };
@@ -37,6 +42,6 @@ class MyApp extends App<IProps & DefaultAppIProps & AppProps> {
 }
 
 export default withRedux(initStore, {
-  deserializeState: (state) => fromJS(state),
-  serializeState: (state) => state.toJS(),
+  deserializeState: (state: any) => fromJS(state),
+  serializeState: (state: any) => state.toJS(),
 })(MyApp);

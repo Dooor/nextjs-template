@@ -1,2 +1,7 @@
 const withTypescript = require("@zeit/next-typescript");
-module.exports = withTypescript();
+const defaultConfig = {
+  distDir: '.next',
+  useFileSystemPublicRoutes: true,
+}
+
+module.exports = withTypescript(defaultConfig);

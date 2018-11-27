@@ -24,11 +24,11 @@ const CountPage = (props: IProps) => (
   </Layout>
 );
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: any) => ({
   count: getCount(state),
 });
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch: any) => {
   return {
     increaseCount: () => dispatch(increaseCount()),
   };

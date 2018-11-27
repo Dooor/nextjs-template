@@ -8,17 +8,19 @@ const initialState = Map({
   count: 0,
 });
 
-const app = (state = initialState, action) => {
+const counter = (state = initialState, action: any) => {
   switch (action.type) {
     case types.INCREASE_COUNT:
-      return state.set('count', state.get('count') + 1);
+      const currentCount = state.get('count') || 0; // FIXME
+
+      return state.set('count', currentCount + 1);
     default:
       return state;
   }
 };
 
-export const getCount = (state) => {
+export const getCount = (state: any) => {
   return state.get('count');
 };
 
-export default app;
+export default counter;

@@ -11,6 +11,6 @@ const middleware = applyMiddleware(logger);
 // Reducers
 import reducer from '../reducers';
 
-export const initStore = (initialState) => {
+export const initStore = (initialState: any) => {
   return createStore(reducer, initialState, composeWithDevTools(middleware));
 };
