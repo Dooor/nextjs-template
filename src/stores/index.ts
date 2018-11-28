@@ -6,11 +6,15 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 // Middleware
 import logger from 'redux-logger';
-const middleware = applyMiddleware(logger);
+let middleware = applyMiddleware(logger);
+
+if (process.env.NODE_ENV !== 'production') {
+  middleware = composeWithDevTools(middleware);
+}
 
 // Reducers
 import reducer from '../reducers';
 
 export const initStore = (initialState: any) => {
-  return createStore(reducer, initialState, composeWithDevTools(middleware));
+  return createStore(reducer, initialState, middleware);
 };
