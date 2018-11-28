@@ -2,9 +2,9 @@
 import { Map } from 'immutable';
 
 // Constants
-import * as types from '../constants/ActionTypes';
+import * as types from '../../constants/ActionTypes';
 
-const initialState = Map({
+export const initialState = Map({
   count: 0,
 });
 
