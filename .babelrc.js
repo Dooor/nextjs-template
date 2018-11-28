@@ -1,4 +1,6 @@
-{
+const env = require('./env-config.js');
+
+module.exports = {
   "env": {
     "development": {
       "presets": [
@@ -25,5 +27,6 @@
         "@zeit/next-typescript/babel"
       ]
     }
-  }
+  },
+  "plugins": [ ['transform-define', env] ]
 }
