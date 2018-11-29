@@ -1,4 +1,5 @@
 // Library
+require('newrelic'); // tslint:disable-line
 import * as next from 'next';
 
 // express

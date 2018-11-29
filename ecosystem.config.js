@@ -17,7 +17,8 @@ module.exports = {
 			},
 			env_production : {
         "NODE_ENV": "production",
-        "PORT": process.env.PORT
+        "PORT": process.env.PORT,
+        "NEW_RELIC_LICENSE_KEY": process.env.NEW_RELIC_LICENSE_KEY
 			}
 		}
 	]
