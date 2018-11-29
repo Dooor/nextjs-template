@@ -6,7 +6,8 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 // Middleware
 import logger from 'redux-logger';
-let middleware = applyMiddleware(logger);
+import trackActions from '../middlewares/trackActions';
+let middleware = applyMiddleware(logger, trackActions);
 
 if (process.env.NODE_ENV !== 'production') {
   middleware = composeWithDevTools(middleware);

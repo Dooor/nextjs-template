@@ -16,6 +16,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "paths": {
+      "keen-tracking": ["./types/keen-tracking"],
       "next-redux-wrapper": ["./types/next-redux-wrapper"]
     },
     "preserveConstEnums": true,
