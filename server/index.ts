@@ -7,13 +7,15 @@ import * as helmet from 'helmet';
 import * as next from 'next';
 
 // lib
-import * as Logger from './src/lib/logger';
+import * as Logger from '../src/lib/logger';
+
+// util
+import { normalizePort, onError } from './util';
 
 // setting
 const dev = process.env.NODE_ENV !== 'production';
-const dir = './';
-const app = next({ dev, dir });
-const PORT = process.env.PORT || 3000;
+const app = next({ dev });
+const PORT = normalizePort(process.env.PORT || 3000);
 
 app.prepare()
   .then(async () => {
@@ -24,6 +26,7 @@ app.prepare()
     server.set('trust proxy', 1);
     server.use(compression());
     server.use(helmet());
+    server.on('error', onError);
 
     const handle = app.getRequestHandler();
 
