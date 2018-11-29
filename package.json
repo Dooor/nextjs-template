@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "test": "jest",
-    "dev": "./node_modules/.bin/pm2 start ecosystem.config.js",
+    "dev": "nodemon server/index.ts",
     "stop": "./node_modules/.bin/pm2 kill",
-    "build": "next build",
+    "build": "next build && tsc --project tsconfig.server.json",
     "start": "pm2-runtime ecosystem.config.js --env production",
     "type-check": "tsc",
     "lint-check": "tslint --project ./",
@@ -31,7 +31,6 @@
     "redux-devtools-extension": "2.13.7",
     "redux-immutable": "4.0.0",
     "redux-logger": "3.0.6",
-    "ts-node": "7.0.1",
     "typescript": "3.1.6"
   },
   "devDependencies": {
@@ -52,8 +51,10 @@
     "enzyme": "3.7.0",
     "enzyme-adapter-react-16": "1.7.0",
     "jest": "23.6.0",
+    "nodemon": "^1.18.7",
     "react-addons-test-utils": "15.6.2",
     "react-test-renderer": "16.6.3",
+    "ts-node": "^7.0.1",
     "tslint": "5.11.0",
     "tslint-react": "3.6.0"
   },

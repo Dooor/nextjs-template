@@ -8,8 +8,7 @@ module.exports = {
   apps: [
 		{
 			name        : "nextjs-template",
-      script      : "./node_modules/.bin/ts-node",
-      args        : "server.ts",
+      script      : ".next/production-server/server/index.js",
 			instances   : process.env.PM2_NUMBER_OF_INSTANCES,
       exec_mode   : "cluster",
 			env: {
