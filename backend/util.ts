@@ -1,5 +1,13 @@
+// Library
+import * as debug from 'debug';
+
 // lib
 import * as Logger from '../src/lib/logger';
+
+// Event listener for HTTP server "listening" event.
+export const onListening = () => {
+  debug('Listening on ' + bind());
+};
 
 // Event listener for HTTP server "error" event.
 export const onError = (error) => {
@@ -7,19 +15,14 @@ export const onError = (error) => {
     throw error;
   }
 
-  const port = normalizePort(process.env.PORT);
-  const bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
-
   // handle specific listen errors with friendly messages
   switch (error.code) {
   case 'EACCES':
-    Logger.error(bind + ' requires elevated privileges');
+    Logger.error(bind() + ' requires elevated privileges');
     process.exit(1);
     break;
   case 'EADDRINUSE':
-    Logger.error(bind + ' is already in use');
+    Logger.error(bind() + ' is already in use');
     process.exit(1);
     break;
   default:
@@ -44,4 +47,11 @@ export const normalizePort = (val) => {
   }
 
   return false;
+};
+
+const bind = () => {
+  const port = normalizePort(process.env.PORT);
+  return typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
 };

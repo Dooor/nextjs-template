@@ -8,7 +8,7 @@ module.exports = {
   apps: [
 		{
 			name        : "nextjs-template",
-      script      : ".next/production-server/server/index.js",
+      script      : ".next/backend/index.js",
 			instances   : process.env.PM2_NUMBER_OF_INSTANCES,
       exec_mode   : "cluster",
 			env: {
@@ -17,8 +17,7 @@ module.exports = {
 			},
 			env_production : {
         "NODE_ENV": "production",
-        "PORT": process.env.PORT,
-        "NODE_PORT": process.env.PORT
+        "PORT": process.env.PORT
 			}
 		}
 	]
