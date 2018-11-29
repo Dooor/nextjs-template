@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "scripts": {
     "test": "jest",
-    "dev": "ts-node --project tsconfig.json server.ts",
+    "dev": "./node_modules/.bin/pm2 start ecosystem.config.js",
+    "stop": "./node_modules/.bin/pm2 kill",
     "build": "next build",
-    "start": "./node_modules/.bin/ts-node --project tsconfig.json server.ts",
+    "start": "pm2-runtime ecosystem.config.js --env production",
     "type-check": "tsc",
     "lint-check": "tslint --project ./",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "monit": "./node_modules/.bin/pm2 monit"
   },
   "dependencies": {
     "@types/node": "10.12.10",
@@ -21,6 +23,7 @@
     "immutable": "4.0.0-rc.12",
     "next": "latest",
     "next-redux-wrapper": "2.0.0",
+    "pm2": "^3.2.2",
     "react": "16.6.3",
     "react-dom": "16.6.3",
     "react-redux": "5.1.1",
