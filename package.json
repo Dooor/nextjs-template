@@ -13,7 +13,7 @@
     "monit": "./node_modules/.bin/pm2 monit"
   },
   "dependencies": {
-    "@types/node": "10.12.10",
+    "@types/node": "10.12.12",
     "@zeit/next-typescript": "1.1.1",
     "body-parser": "1.18.3",
     "compression": "1.7.3",
