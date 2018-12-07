@@ -32,7 +32,7 @@
     "redux-devtools-extension": "2.13.7",
     "redux-immutable": "4.0.0",
     "redux-logger": "3.0.6",
-    "typescript": "3.2.1"
+    "typescript": "3.2.2"
   },
   "devDependencies": {
     "@types/compression": "0.0.36",
