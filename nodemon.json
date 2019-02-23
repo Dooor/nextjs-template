@@ -1,6 +1,6 @@
 {
     "watch": ["backend/**/*.ts"],
     "execMap": {
-      "ts": "ts-node --typeCheck --compilerOptions '{\"module\":\"commonjs\"}'"
+      "ts": "ts-node -O '{\"module\":\"commonjs\"}'"
     }
   }
