@@ -4,9 +4,21 @@ import withRedux from 'next-redux-wrapper';
 import App, { AppProps, Container, DefaultAppIProps, NextAppContext } from 'next/app';
 import * as React from 'react';
 import { Provider } from 'react-redux';
+import { createGlobalStyle } from 'styled-components';
 
 // Store
 import { initStore } from '../src/stores';
+
+const GlobalStyle = createGlobalStyle`
+  html {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+  }
+`;
 
 interface IProps {
   store: any;
@@ -36,6 +48,7 @@ class MyApp extends App<IProps & DefaultAppIProps & AppProps> {
         <Provider store={store}>
           <Component {...pageProps} />
         </Provider>
+        <GlobalStyle />
       </Container>
     );
   }
