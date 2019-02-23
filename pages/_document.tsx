@@ -4,7 +4,20 @@
 // ./pages/_document.js
 import Document, { Head, Main, NextScript } from 'next/document';
 
-export default class MyDocument extends Document {
+interface IProps {
+  styleTags: Array<React.ReactElement<{}>>;
+}
+
+import { ServerStyleSheet } from 'styled-components';
+
+export default class MyDocument extends Document<IProps> {
+  public static getInitialProps({ renderPage }) {
+    const sheet = new ServerStyleSheet();
+    const page = renderPage((App) => (props) => sheet.collectStyles(<App {...props} />));
+    const styleTags = sheet.getStyleElement();
+    return { ...page, styleTags };
+  }
+
   public render() {
     return (
       <html>
@@ -16,6 +29,8 @@ export default class MyDocument extends Document {
           />
           <meta name='description' content='' />
           <meta name='author' content='' />
+
+          {this.props.styleTags}
         </Head>
         <body>
           <Main />
