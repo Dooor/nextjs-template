@@ -13,7 +13,6 @@
     "monit": "./node_modules/.bin/pm2 monit"
   },
   "dependencies": {
-    "@types/node": "10.12.27",
     "@zeit/next-typescript": "1.1.1",
     "acorn": "6.1.0",
     "body-parser": "1.18.3",
@@ -43,6 +42,7 @@
     "@types/helmet": "0.0.42",
     "@types/jest": "24.0.6",
     "@types/next": "8.0.1",
+    "@types/node": "10.12.27",
     "@types/react": "16.8.4",
     "@types/react-dom": "16.8.2",
     "@types/react-redux": "6.0.13",
