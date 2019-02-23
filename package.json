@@ -21,7 +21,7 @@
     "cors": "2.8.5",
     "debug": "4.1.0",
     "express": "4.16.4",
-    "helmet": "3.15.0",
+    "helmet": "3.15.1",
     "immutable": "4.0.0-rc.12",
     "next": "8.0.3",
     "next-redux-wrapper": "2.0.0",
