@@ -9,11 +9,16 @@ import Animation from '../../../../constants/Styles/Animation';
 import Color from '../../../../constants/Styles/Color';
 import Shadow from '../../../../constants/Styles/Shadow';
 import Size from '../../../../constants/Styles/Size';
+import { PagenameType } from '../../../../constants/TypeAliases';
 
 // Style
 import styled, { media } from '../../styled-components';
 
-export const Header: React.SFC<{}> = () => {
+interface IProps {
+  activePage: PagenameType;
+}
+
+export const Header: React.SFC<IProps> = ({ activePage }) => {
   const Wrapper = styled.header`
     background: ${Color.HEADER.BACKGROUND};
     box-shadow: ${Shadow.HEADER};
@@ -63,11 +68,14 @@ export const Header: React.SFC<{}> = () => {
     background: ${Color.HEADER.INDICATOR};
   `;
 
+  const isHomeActive = activePage === 'home';
+  const isCountActive = activePage === 'count';
+
   return (
     <Wrapper>
       <Nav>
-        <Link href='/'><NavLink active={true}>Home<NavIndicator /></NavLink></Link>
-        <Link href='/count'><NavLink active={false}>Count</NavLink></Link>
+        <Link href='/'><NavLink active={isHomeActive}>Home{isHomeActive && <NavIndicator />}</NavLink></Link>
+        <Link href='/count'><NavLink active={isCountActive}>Count{isCountActive && <NavIndicator />}</NavLink></Link>
       </Nav>
     </Wrapper>
   );

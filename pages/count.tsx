@@ -16,7 +16,7 @@ interface IProps {
 }
 
 const CountPage = (props: IProps) => (
-  <App>
+  <App page='count'>
     <p>This is the count page {props.count}</p>
     <button onClick={props.increaseCount}>+</button>
   </App>

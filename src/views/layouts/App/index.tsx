@@ -3,9 +3,15 @@ import * as React from 'react';
 import { Header } from '../../components/organisms/Header';
 import { Main } from '../../components/organisms/Main';
 
-const App: React.SFC<{}> = ({ children }) => (
+import { PagenameType } from '../../../constants/TypeAliases';
+
+interface IProps {
+  page: PagenameType;
+}
+
+const App: React.SFC<IProps> = ({ children, page }) => (
   <>
-    <Header />
+    <Header activePage={page} />
     <Main>
       {children}
     </Main>
