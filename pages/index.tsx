@@ -1,9 +1,7 @@
-import Link from 'next/link';
-import Layout from '../src/views/components/Layout';
+import App from '../src/views/layouts/App';
 
 export default () => (
-  <Layout title='Home'>
+  <App>
     <h2>Hello Next.js 👋</h2>
-    <p><Link href='/count'><a>Count</a></Link></p>
-  </Layout>
+  </App>
 );
