@@ -1,9 +1,9 @@
 // Library
-import * as bodyParser from 'body-parser';
-import * as compression from 'compression';
-import * as cors from 'cors';
-import * as express from 'express';
-import * as helmet from 'helmet';
+import bodyParser from 'body-parser';
+import compression from 'compression';
+import cors from 'cors';
+import express from 'express';
+import helmet from 'helmet';
 
 // util
 import { onError, onListening } from './util';

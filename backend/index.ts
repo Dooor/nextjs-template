@@ -1,5 +1,5 @@
 // Library
-import * as next from 'next';
+import next from 'next';
 
 // express
 import router from './router';

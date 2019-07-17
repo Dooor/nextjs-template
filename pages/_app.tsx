@@ -1,7 +1,7 @@
 // Library
 import { fromJS } from 'immutable';
 import withRedux from 'next-redux-wrapper';
-import App, { AppProps, Container, DefaultAppIProps, NextAppContext } from 'next/app';
+import App, { AppContext, AppInitialProps, AppProps, Container } from 'next/app';
 import * as React from 'react';
 import { Provider } from 'react-redux';
 import { createGlobalStyle } from '../src/views/components/styled-components';
@@ -27,8 +27,8 @@ interface IProps {
   store: any;
 }
 
-class MyApp extends App<IProps & DefaultAppIProps & AppProps> {
-  public static async getInitialProps(context: NextAppContext) {
+class MyApp extends App<IProps & AppInitialProps & AppProps> {
+  public static async getInitialProps(context: AppContext) {
     const {
       Component,
       ctx,
