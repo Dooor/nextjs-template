@@ -2,7 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "target": "esnext",
-    "module": "commonjs",
+    "module": "esnext",
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
@@ -16,11 +16,27 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "paths": {
-      "next-redux-wrapper": ["./types/next-redux-wrapper"]
+      "next-redux-wrapper": [
+        "./types/next-redux-wrapper"
+      ]
     },
     "preserveConstEnums": true,
     "removeComments": false,
     "skipLibCheck": true,
-    "sourceMap": true
-  }
+    "sourceMap": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ]
 }
