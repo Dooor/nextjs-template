@@ -55,7 +55,7 @@
     "enzyme": "3.9.0",
     "enzyme-adapter-react-16": "1.10.0",
     "jest": "24.1.0",
-    "nodemon": "1.18.10",
+    "nodemon": "2.0.17",
     "react-addons-test-utils": "15.6.2",
     "react-test-renderer": "16.8.3",
     "ts-node": "8.0.2",
